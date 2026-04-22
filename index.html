@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en_US" data-theme-mode="light" data-light-theme="daylight" data-dark-theme="midnight">
+<head>
+    <base href="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" id="baseStyle" href="stage/build/export/base.css?v=3.6.5"/>
+    <link rel="stylesheet" type="text/css" id="themeDefaultStyle" href="appearance/themes/daylight/theme.css?v=3.6.5"/>
+    <script src="stage/protyle/js/protyle-html.js?v=3.6.5"></script>
+    
+    <title>Microinstructions Guide</title>
+    <!-- Exported by SiYuan v3.6.5 -->
+    <style>
+        body {font-family: var(--b3-font-family);background-color: var(--b3-theme-background);color: var(--b3-theme-on-background)}
+        @font-face {
+  font-family: "Emojis Additional";
+  src: url(appearance/fonts/Noto-COLRv1-2.047/Noto-COLRv1.woff2) format("woff2");
+  unicode-range: U+1fae9, U+1fac6, U+1fabe, U+1fadc, U+e50a, U+1fa89, U+1fadf, U+1f1e6-1f1ff, U+1fa8f;
+}
+@font-face {
+  font-family: "Emojis Reset";
+  src: local("Apple Color Emoji"),
+  local("Segoe UI Emoji"),
+  local("Segoe UI Symbol");
+  unicode-range: U+21a9, U+21aa, U+2122, U+2194-2199, U+23cf, U+25b6, U+25c0, U+25fb, U+25fc, U+25aa, U+25ab, U+2600-2603,
+  U+260e, U+2611, U+261d, U+2639, U+263a, U+2640, U+2642, U+2660, U+2663, U+2665, U+2666, U+2668, U+267b, U+26aa, U+26ab, 
+  U+2702, U+2708, U+2934, U+2935, U+1f170, U+1f171, U+1f17e, U+1f17f, U+1f202, U+1f21a, U+1f22f, U+1f232-1f23a, U+1f250, 
+  U+1f251, U+1fae4, U+2049, U+203c, U+3030, U+303d, U+24c2, U+26a0, U+26a1, U+26be, U+27a1, U+2b05-2b07, U+3297, U+3299, U+a9, U+ae;
+  size-adjust: 115%;
+}
+@font-face {
+  font-family: "Emojis";
+  src: local("Apple Color Emoji"),
+  local("Segoe UI Emoji"),
+  local("Segoe UI Symbol");
+  size-adjust: 115%;
+}
+:root { --b3-font-size-editor: 16px }
+.b3-typography code:not(.hljs), .protyle-wysiwyg span[data-type~=code] { font-variant-ligatures: none }
+        
+        
+    </style>
+    <style id="snippetCSS20251011170014-xm2be7r">/* Custom Snippet to change document title and heading colors */
+
+/* Target the Document Title */
+/* The document title is typically represented by the H1 element in the b3-typography scope */
+.b3-typography h1.h1,
+.protyle-title .protyle-title__input {
+    /* Document Title Color: #5B0F00 */
+    color: #5B0F00 !important;
+}
+
+/* Target all other Headings (H2 through H6) */
+.b3-typography h2, 
+.b3-typography h3, 
+.b3-typography h4, 
+.b3-typography h5, 
+.b3-typography h6 {
+    /* All Other Headings Color: #980000 */
+    color: #980000 !important;
+}</style>
+</head>
+<body>
+<div class="b3-typography" 
+style="max-width: 800px;margin: 0 auto;" id="preview"><h1 id="Microinstructions-Guide" title="Microinstructions Guide" updated="20260422015520">Microinstructions Guide</h1>
+<blockquote id="20260422014104-bqxhr0o" updated="20260422014541">
+<h1 id="20260422014104-sbx7qu1" updated="20260422014541">Remarks:</h1>
+<ul start="0" id="20260422014110-dcs3hzc" updated="20260422014541">
+<li id="20260422014111-yq3p9lb" updated="20260422014111">
+<p updated="20260422014221" id="20260422014111-u8f7ihw">If you are struggling with microinstructions, or need more depth init, then refer to this document, i've written my thought process when going through any instruction for filling table</p>
+</li>
+<li id="20260422014222-84rb4wk" updated="20260422014222">
+<p id="20260422014222-hcw7q8d" updated="20260422014326">I've added images as well to avoid any typos (but if u find any typos pls reach out or point it on the discussion forum for COMP2280) (i hope there isn't any typos)</p>
+</li>
+<li id="20260422014327-3va1vst" updated="20260422014327">
+<p id="20260422014327-o2hl6d0" updated="20260422014510">Lastly to strengthen ur understanding and gain confidence, practice these steps for all 16 instructions types OR untill u gain confidence (trust me it gets simple after 2, 3 instructions)</p>
+</li>
+<li updated="20260422014541" id="20260422014511-iytgaub">
+<p id="20260422014511-ne25efo" updated="20260422014541"><span data-type="em">Feel free to reach out or ask any questions regarding it on discussion forum - Krish Sanjay Bhalala</span></p>
+</li>
+</ul>
+</blockquote>
+<h1 id="20260421232846-mj4lofr" updated="20260422014552">Instruction: LD R7 Label</h1>
+<ul start="0" id="20260421232903-s3xfj5b" updated="20260422011157">
+<li id="20260421232904-dswjnb0" updated="20260422011157">
+<p id="20260421232904-895lbkj" updated="20260422011157">In your instruction register of 16 bits these bits will be store <span data-type="code">0010 111 000000001</span> assuming the label is at address <span data-type="code">PC+PCoffset9</span><span contenteditable="false" data-type="img" class="img" style="min-width: calc(100% - 0.1em);"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 1.11.45AM-20260422011149-w69aloe.png" data-src="assets/Screenshot 2026-04-22 at 1.11.45AM-20260422011149-w69aloe.png" alt="Screenshot 2026-04-22 at 1.11.45 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+</ul>
+<p id="20260421232842-wtg71ec" updated="20260421233113">‍</p>
+<ul start="0" updated="20260422011218" id="20260421233108-i2aoj98">
+<li id="20260421233225-4eij7w3" updated="20260421233225">
+<p id="20260421233225-95fna6x" updated="20260421233349">Now look at your state diagram and lc3 circuit diagram to figure out what signals to activate in your circuits and in what order</p>
+</li>
+<li id="20260421233349-t0bsh61" updated="20260421233349">
+<p id="20260421233349-xnp0jm9" updated="20260421233426">The signals that u activate for each state will go in single row of your reference table</p>
+</li>
+<li id="20260421233114-wyhn6jp" updated="20260421233114">
+<p id="20260421233114-u1hv5h4" updated="20260421233220">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-21 at 11.32.14PM-20260421233218-46533li.png" data-src="assets/Screenshot 2026-04-21 at 11.32.14PM-20260421233218-46533li.png" alt="Screenshot 2026-04-21 at 11.32.14 PM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li id="20260421233223-bs6pf1y" updated="20260421233223">
+<p id="20260421233223-w9y2igv" updated="20260421233318">Lets start from a state (usually in exam they would give u the starting state) if not then simply start by 18</p>
+</li>
+<li id="20260421233428-yyqtev9" updated="20260421233428">
+<p id="20260421233428-q52iegd" updated="20260422001308">simply put in your start state and next state (in this case its 18 and 33 respectively)</p>
+</li>
+<li id="20260422001310-vkj54ww" updated="20260422001310">
+<p id="20260422001310-6ucted1" updated="20260422001430">for state 18 we are basically loading the PC into MAR and incrementing PC (this is kind of part of fetching instruction stage, as we are basically prepping for quering the memory for the instruction stored at address PC). Lets break down the state into more simpler steps</p>
+</li>
+<li id="20260421233608-yu9fw2l" updated="20260421233608">
+<p id="20260421233608-8zmhow7" updated="20260421233622">eg- <span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-21 at 11.36.15PM-20260421233617-xfqc6cs.png" data-src="assets/Screenshot 2026-04-21 at 11.36.15PM-20260421233617-xfqc6cs.png" alt="Screenshot 2026-04-21 at 11.36.15 PM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<ul start="0" id="20260421233623-dl7hyc7" updated="20260421233623">
+<li id="20260421233622-mndp3ca" updated="20260421233622">
+<p id="20260421233622-hn3vy09" updated="20260421233639">In this state we are doing a bunch of things in order</p>
+<ol id="20260421233639-o52t86r" updated="20260421233644">
+<li id="20260421233644-cgb215y" updated="20260421233644">
+<p id="20260421233644-b11uyvf" updated="20260421234711"><span data-type="text" style="background-color: var(--b3-card-success-background); color: var(--b3-card-success-color);">fetching the value of PC and bringing it to MAR</span></p>
+</li>
+<li id="20260421233700-83yyxcz" updated="20260421233700">
+<p id="20260421233700-36yjw6o" updated="20260421234737"><span data-type="text" style="background-color: var(--b3-card-info-background); color: var(--b3-card-info-color);">Updating the value of MAR with PC value</span></p>
+</li>
+<li updated="20260421233713" id="20260421233713-ktb5qxc">
+<p updated="20260421234733" id="20260421233713-c4am4im"><span data-type="text" style="background-color: var(--b3-card-error-background); color: var(--b3-card-error-color);">Incrementing and updating the PC value with PC+1</span></p>
+</li>
+</ol>
+</li>
+<li id="20260421233743-ngy8xjh" updated="20260421233743">
+<p id="20260421233743-fm8fty0" updated="20260421233903">each of those steps would require specifc signals to be triggered.</p>
+</li>
+<li id="20260421233903-3wtjp8i" updated="20260421233903">
+<p id="20260421233903-mnak3fa" updated="20260421233924"><span data-type="strong">Now which signals to activate would depend on the components in the circuits being activated</span></p>
+<ul start="0" id="20260421233934-chyryfe" updated="20260421233934">
+<li id="20260421233955-0rdx0ne" updated="20260421233955">
+<p id="20260421233955-m56j4yi" updated="20260421234814">Simply look at ur circuit diagrams (I've color code the steps to make it look more clear about what steps are triggering what signals)</p>
+</li>
+<li id="20260421233934-lk1nsvu" updated="20260421233934">
+<p id="20260421233934-vnstdgr" updated="20260421234637">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-21 at 11.46.33PM-20260421234637-czyg7fq.png" data-src="assets/Screenshot 2026-04-21 at 11.46.33PM-20260421234637-czyg7fq.png" alt="Screenshot 2026-04-21 at 11.46.33 PM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li id="20260421234818-g3etthi" updated="20260421234818">
+<ol id="20260421234831-6itt28m" updated="20260421233644">
+<li id="20260421234831-5jlp90h" updated="20260421233644">
+<p id="20260421234831-i0ave1o" updated="20260421234711"><span data-type="text" style="background-color: var(--b3-card-success-background); color: var(--b3-card-success-color);">fetching the value of PC and bringing it to MAR</span></p>
+<ul start="0" updated="20260421234834" id="20260421234832-ji1tw95">
+<li id="20260421234834-d3akeeu" updated="20260421234834">
+<p id="20260421234834-h4k9mdj" updated="20260421235025">we need to bring the PC data into the MAR but its too far so we will use the bus, and whenever u want to use the bus you need, u need to use the gates (triangle things) to let the data flow into the bus, in this case we will use <span data-type="strong">G.PC = 1</span> (basically saying open the gate of PC to let the data flow in bus)</p>
+</li>
+</ul>
+</li>
+<li id="20260421234831-2ngugop" updated="20260421234831">
+<p id="20260421234831-6wxq30m" updated="20260421234737"><span data-type="text" style="background-color: var(--b3-card-info-background); color: var(--b3-card-info-color);">Updating the value of MAR with PC value</span></p>
+<ul start="0" id="20260421235028-n963ko1" updated="20260421235030">
+<li id="20260421235030-d7dl2px" updated="20260421235030">
+<p id="20260421235030-7smhmhl" updated="20260421235314">since PC is already flowing in the bus we need to write it into the MAR register for this step (so we will use load signals for this to write data to registers) specifically we will set <span data-type="strong">L.MDR = 1</span> (basically saying overwrite the data in MAR which the data recieved via the wire)  
+​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-21 at 11.53.11PM-20260421235314-g30sa66.png" data-src="assets/Screenshot 2026-04-21 at 11.53.11PM-20260421235314-g30sa66.png" alt="Screenshot 2026-04-21 at 11.53.11 PM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+</ul>
+</li>
+<li id="20260421234831-cowqv2j" updated="20260421234831">
+<p id="20260421234831-sx91l7h" updated="20260421234733"><span data-type="text" style="background-color: var(--b3-card-error-background); color: var(--b3-card-error-color);">Incrementing and updating the PC value with PC+1</span></p>
+<ul start="0" id="20260421235241-pga7lw3" updated="20260421235244">
+<li id="20260421235244-pd6vjuf" updated="20260421235244">
+<p id="20260421235244-i1bcq6y" updated="20260421235642">Now <span data-type="code">+1</span> represents literally adding +1 to PC so that box will output PC+1 and that flows directly to MUX with pc written on it which basically selects what value to write it PC. it has multiple inputs, but we are only interested in PC+1 so we set signal <span data-type="strong">M.PC = 1</span> (basically its saying, select the line of PC+1 and let it pass through it)</p>
+</li>
+<li id="20260421235644-udpk3rw" updated="20260421235644">
+<p id="20260421235644-tzq9sdd" updated="20260421235809">Lastly we need to override that PC+1 data into PC register, which once again we will use good old signal <span data-type="strong">load</span> specifically <span data-type="strong">L.PC = 1</span> (bascially it says whatever value that im recieveing from below, overwrite that into PC)  
+​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-21 at 11.53.37PM-20260421235339-jllmlx6.png" data-src="assets/Screenshot 2026-04-21 at 11.53.37PM-20260421235339-jllmlx6.png" alt="Screenshot 2026-04-21 at 11.53.37 PM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​<span contenteditable="false" data-type="img" class="img"><span> </span><span style="width: calc(50% - 8px);"><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-21 at 11.55.49PM-20260421235552-ws509i0.png" data-src="assets/Screenshot 2026-04-21 at 11.55.49PM-20260421235552-ws509i0.png" alt="Screenshot 2026-04-21 at 11.55.49 PM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li updated="20260421235827" id="20260421235827-zh5qd49">
+<p id="20260421235827-et2plxp" updated="20260421235853">So at state 18 you are activating these signals</p>
+<ul start="0" updated="20260421235854" id="20260421235854-o4rlas6">
+<li id="20260421235853-rzdhgrw" updated="20260421235853">
+<p id="20260421235853-3eo21ls" updated="20260422000016">​<span contenteditable="false" data-type="img" class="img"><span> </span><span style="width: calc(23% - 8px);"><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-21 at 11.59.09PM-20260421235911-u82b2py.png" data-src="assets/Screenshot 2026-04-21 at 11.59.09PM-20260421235911-u82b2py.png" alt="Screenshot 2026-04-21 at 11.59.09 PM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>which is exactly what you are filling it in your table with their values 1,0</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="20260422000019-3em6p2m" updated="20260422000019">
+<p id="20260422000019-2crubzi" updated="20260422000046">Next we move to step 33 based on the FSM</p>
+</li>
+<li id="20260422000123-t7fam0w" updated="20260422000123">
+<p id="20260422000123-8fpenic" updated="20260422000206">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.01.34AM-20260422000138-mimc1a2.png" data-src="assets/Screenshot 2026-04-22 at 12.01.34AM-20260422000138-mimc1a2.png" alt="Screenshot 2026-04-22 at 12.01.34 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span><span data-type="em">ignore the R transition</span></p>
+</li>
+<li id="20260422000208-3ai06bu" updated="20260422000208">
+<p id="20260422000208-7ysu7cg" updated="20260422000215">here the steps are</p>
+<ol id="20260422000217-rup4l9k" updated="20260422000220">
+<li id="20260422000220-fhs6xea" updated="20260422000220">
+<p id="20260422000220-3qauza6" updated="20260422001203"><span data-type="text" style="background-color: var(--b3-card-error-background); color: var(--b3-card-error-color);">bring the value of MAR into the memory M</span></p>
+<ul start="0" id="20260422001204-f7dgi7n" updated="20260422001206">
+<li id="20260422001206-ep61vgk" updated="20260422001206">
+<p id="20260422001206-lhhaijh" updated="20260422001233">no singals are needed as data is always flowing in those red wires anyways</p>
+</li>
+</ul>
+</li>
+<li id="20260422000248-fq79ws9" updated="20260422000248">
+<p id="20260422000248-cwb5iqk" updated="20260422001441"><span data-type="text" style="background-color: var(--b3-card-success-background); color: var(--b3-card-success-color);">Read the value at address stored in MAR in memory M</span></p>
+<ul start="0" id="20260422001236-n15vk8w" updated="20260422001238">
+<li id="20260422001238-2avqf1r" updated="20260422001238">
+<p id="20260422001238-tuvak5a" updated="20260422001505">Memory will only communicate using MAR and MDR and signal <span data-type="strong">RW</span></p>
+</li>
+<li id="20260422001505-97t4bjp" updated="20260422001505">
+<p id="20260422001505-uqkrzjl" updated="20260422001622">when <span data-type="strong">RW = 1</span> it means we are asking memory perform read operation, so memory will take the address stored in MAR and read the data at it and output the data in wire <span data-type="strong">r.out</span></p>
+<ul start="0" id="20260422001623-cb91yoc" updated="20260422001623">
+<li id="20260422001623-2ta2ms7" updated="20260422001623">
+<p id="20260422001623-rheydl6" updated="20260422001707"><span data-type="em">NOTE: common confusion: r.out is just a label representing where the read data goes, its not a signal so be careful</span></p>
+</li>
+</ul>
+</li>
+<li id="20260422001708-i6elklc" updated="20260422001708">
+<p id="20260422001708-mp425yo" updated="20260422001853">when <span data-type="strong">RW = 0</span> it means we are asking memory to write the data of MDR into the memory location at address stored in MAR (basically we are doing Memory[MAR] = MDR, if we assume memory is a big array with addresses as their indexes)</p>
+</li>
+</ul>
+</li>
+<li id="20260422000317-x429ccm" updated="20260422000317">
+<p updated="20260422000336" id="20260422000317-6qbp2if">Store the value at address stored in MAR in memory M into the MDR</p>
+<ul start="0" id="20260422001910-gohezao" updated="20260422001911">
+<li id="20260422001911-282u4ir" updated="20260422001911">
+<p id="20260422001911-or2ux7z" updated="20260422001954">Once the memory does the read for us, we will take its output value and store it into the MDR</p>
+</li>
+<li id="20260422001955-nlyn407" updated="20260422001955">
+<p id="20260422001955-ww3g82n" updated="20260422002057">but there is a MUX between MDR and r.out (which selects between which value to let it pass, in our case we want it to pass the value from <span data-type="strong">mem,</span> so <span data-type="strong">M.mdr = 1</span>)</p>
+</li>
+<li id="20260422002059-2s86tcx" updated="20260422002059">
+<p updated="20260422002214" id="20260422002059-nitnzjh">Lastly once agian to overwrite any value to a register (in this case MDR) we will use <span data-type="strong">load signal,</span> so set <span data-type="strong">L.MDR = 1</span> to overwrite the value from M.mdr into the MDR</p>
+</li>
+</ul>
+<p updated="20260422001154" id="20260422001152-8cn5z0k">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.11.48AM-20260422001154-6gufcf3.png" data-src="assets/Screenshot 2026-04-22 at 12.11.48AM-20260422001154-6gufcf3.png" alt="Screenshot 2026-04-22 at 12.11.48 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+</ol>
+</li>
+<li id="20260422002223-tr74od7" updated="20260422002223">
+<p id="20260422002223-kwy4kuu" updated="20260422002728">Thats it for this state, now we will move to next state 35</p>
+</li>
+<li id="20260422002725-q3s3m86" updated="20260422002725">
+<p id="20260422002725-ykyhttc" updated="20260422002742">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.27.37AM-20260422002742-le4i2pd.png" data-src="assets/Screenshot 2026-04-22 at 12.27.37AM-20260422002742-le4i2pd.png" alt="Screenshot 2026-04-22 at 12.27.37 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li id="20260422002745-fe66d3y" updated="20260422002745">
+<p id="20260422002745-drqe048" updated="20260422002750">Here we are doing 2 steps</p>
+<ol id="20260422002751-p1twf65" updated="20260422002753">
+<li id="20260422002753-t28gag4" updated="20260422002753">
+<p id="20260422002753-qiu3i29" updated="20260422005128"><span data-type="text" style="background-color: var(--b3-card-error-background); color: var(--b3-card-error-color);">bringing the data of MDR closer to IR</span></p>
+<ul start="0" id="20260422002838-kgj1clr" updated="20260422002841">
+<li id="20260422002841-9zoyabe" updated="20260422002841">
+<p id="20260422002841-gr0uobc" updated="20260422002930">MDR contains the data already so we just need to bring it to the bus (so once again turn on the <span data-type="strong">Gate.MDR</span>)</p>
+</li>
+</ul>
+</li>
+<li id="20260422002931-xley60k" updated="20260422002931">
+<p id="20260422002931-b21893m" updated="20260422005134"><span data-type="text" style="background-color: var(--b3-card-info-background); color: var(--b3-card-info-color);">Store the data from the bus to IR</span></p>
+<ul start="0" id="20260422002959-gqkvht5" updated="20260422003000">
+<li id="20260422003000-k5k3463" updated="20260422003000">
+<p id="20260422003000-b4nru5u" updated="20260422003128">To write to any register we will use <span data-type="strong">load signal</span> specifically <span data-type="strong">L.IR = 1</span> (basically we are saying, ovrrrited the data from blue wire into the IR)</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li id="20260422010939-m9yop2j" updated="20260422011218">
+<p updated="20260422011218" id="20260422010939-jax9gpt"><span data-type="strong em">Fun Fact:</span> <span data-type="em">our MDR contains the 16 bit instruction for</span> <span data-type="code em">LD R7 LABEL</span> = <span data-type="code">0010 111 000000001</span> <span data-type="em">at this point that we grabbed from memory, (P.S. all the instructions lives in memory lol)</span></p>
+</li>
+</ul>
+<p id="20260422002722-z7ruv2z" updated="20260422002724">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.27.19AM-20260422002724-g2nl8gd.png" data-src="assets/Screenshot 2026-04-22 at 12.27.19AM-20260422002724-g2nl8gd.png" alt="Screenshot 2026-04-22 at 12.27.19 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<ul start="0" id="20260422003138-b6o048v" updated="20260422005317">
+<li id="20260422003140-00sh8xy" updated="20260422003140">
+<p id="20260422003140-wptlk06" updated="20260422003255">Next state would be 32 (<span data-type="strong">instruction decode)</span> stage where we are decoding which instruction is it based on the OPcode values i.e. IR bits 15, 14, 13, 12</p>
+<p id="20260422003257-fc7phn0" updated="20260422003344"> <span contenteditable="false" data-type="img" class="img"><span> </span><span style="width: calc(50% - 8px);"><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.31.54AM-20260422003159-kk1usol.png" data-src="assets/Screenshot 2026-04-22 at 12.31.54AM-20260422003159-kk1usol.png" alt="Screenshot 2026-04-22 at 12.31.54 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+<p id="20260422003347-oyjz6i3" updated="20260422003408"><span data-type="em">For this course assuming some magic happens and we get correct instruction decode without any signal activations (hence this row will be emtpy in the table)</span></p>
+</li>
+<li id="20260422005043-03emlr8" updated="20260422005317">
+<p id="20260422005043-tt7y6xm" updated="20260422005317">Lets say a magic oracle told us the next state would be 3 since we are doing store  
+​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.53.06AM-20260422005311-i15yh18.png" data-src="assets/Screenshot 2026-04-22 at 12.53.06AM-20260422005311-i15yh18.png" alt="Screenshot 2026-04-22 at 12.53.06 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li id="20260422005115-cot3x4b" updated="20260422005236">
+<p id="20260422005115-1vsyh1s" updated="20260422005157">Now as a practice can you break down the steps like we did in previous steps??</p>
+<ul start="0" id="20260422005158-xl38p4d" updated="20260422005236">
+<li id="20260422005158-xam7u3e" updated="20260422005236">
+<p id="20260422005158-1kg6hhy" updated="20260422005236">i've color coded the steps for reference, but a good excercise would be to word them out</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul start="0" id="20260422003409-wz5uc2e" updated="20260422005042">
+<li id="20260422003410-nwmaoz8" updated="20260422005042">
+<p id="20260422003410-bsix3fk" updated="20260422005042">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.50.35AM-20260422005042-scvatqy.png" data-src="assets/Screenshot 2026-04-22 at 12.50.35AM-20260422005042-scvatqy.png" alt="Screenshot 2026-04-22 at 12.50.35 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+</ul>
+<ul start="0" id="20260422005238-1fzw7v4" updated="20260422005244">
+<li updated="20260422005244" id="20260422005244-2m5gr5o">
+<p id="20260422005244-1wwoa1z" updated="20260422005340">Then the next state would be simply be 25  
+ <span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.53.32AM-20260422005336-v7p4puf.png" data-src="assets/Screenshot 2026-04-22 at 12.53.32AM-20260422005336-v7p4puf.png" alt="Screenshot 2026-04-22 at 12.53.32 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li id="20260422005342-a14fy8a" updated="20260422005342">
+<p id="20260422005342-qyf9zaj" updated="20260422005936">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 12.59.30AM-20260422005936-g57df0a.png" data-src="assets/Screenshot 2026-04-22 at 12.59.30AM-20260422005936-g57df0a.png" alt="Screenshot 2026-04-22 at 12.59.30 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li id="20260422005941-7vwj9tw" updated="20260422005941">
+<p id="20260422005941-f9r1hyc" updated="20260422010013">Then the next state would be 27 based on state machine  
+​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 1.00.08AM-20260422010012-kjo6glv.png" data-src="assets/Screenshot 2026-04-22 at 1.00.08AM-20260422010012-kjo6glv.png" alt="Screenshot 2026-04-22 at 1.00.08 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li updated="20260422010018" id="20260422010018-lnow4nt">
+<p id="20260422010018-twnmk5z" updated="20260422010826">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 1.08.22AM-20260422010826-vc8g1b9.png" data-src="assets/Screenshot 2026-04-22 at 1.08.22AM-20260422010826-vc8g1b9.png" alt="Screenshot 2026-04-22 at 1.08.22 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li id="20260422010829-d3odmmu" updated="20260422010829">
+<p id="20260422010829-aw0v3zh" updated="20260422010901">Thats' it we are done with entire instruction cycle</p>
+<ol id="20260422010902-z5q0u4l" updated="20260422010907">
+<li id="20260422010907-loqoo8h" updated="20260422010907">
+<p id="20260422010907-yua52vj" updated="20260422010922">Instruction Fetch</p>
+<ul start="0" updated="20260422011233" id="20260422011232-g735ie8">
+<li updated="20260422011233" id="20260422011233-5hz7jtc">
+<p id="20260422011233-7mbt7f0" updated="20260422011307">(state 18 to 35) helps us fetch the 16 bit instruction <span data-type="code">0010 111 000000001</span> for the current point in code using PC</p>
+</li>
+</ul>
+</li>
+<li id="20260422011307-q3y3upg" updated="20260422011307">
+<p id="20260422011307-xnjvw41" updated="20260422011522">Instruction Decode (magic state 32) (basically find what type of instruction to run)</p>
+</li>
+<li id="20260422011333-8geqdzw" updated="20260422011333">
+<p id="20260422011333-bp4o7jz" updated="20260422011538">Execution Stage (state 3) (doing the math for that instruction using either ALU or Adders)</p>
+</li>
+<li id="20260422011412-21ra0pb" updated="20260422011412">
+<p id="20260422011412-gi193td" updated="20260422011552">Memory Stage (state 25) (loading or storing the data to memory)</p>
+</li>
+<li id="20260422011426-9q29rzt" updated="20260422011426">
+<p id="20260422011426-g3yavsp" updated="20260422011623">Write Back Stage (state 27) (writing the result of that instruction either from doing math or from memory into the Destination Register DR)</p>
+</li>
+</ol>
+</li>
+<li id="20260422011627-07z8y8y" updated="20260422011627">
+<p id="20260422011627-9zbjxc2" updated="20260422011707"><span data-type="strong">This cycle happens for all instructions and thats one way of filling the reference table</span></p>
+</li>
+</ul>
+<h1 id="20260422011709-3ugire5" updated="20260422012309">Verifying Correctness</h1>
+<ul start="0" id="20260422011721-06wriz6" updated="20260422012309">
+<li id="20260422011722-xir3j0t" updated="20260422011722">
+<p id="20260422011722-53pupl2" updated="20260422011823">if u want to see if your table is correct,</p>
+<ol id="20260422011827-0ae722s" updated="20260422011829">
+<li id="20260422011829-v4h93h5" updated="20260422011829">
+<p id="20260422011829-314c298" updated="20260422011829">simply draw your datapaths on the circuit and write all the signals that you would need to turn on in each state.</p>
+</li>
+<li id="20260422011832-qdcxrr0" updated="20260422011832">
+<p id="20260422011832-vdp8ds3" updated="20260422011933">then trace the wires from state 18 to state 27 to state 18 and your tracing must be a continous line without any breakpoints</p>
+</li>
+</ol>
+</li>
+<li id="20260422011939-z7upfup" updated="20260422012309">
+<p updated="20260422012309" id="20260422011939-egm0szh">Lastly make sure to avoid breaking any common facts</p>
+</li>
+</ul>
+<h1 id="20260422012020-ohrowve" updated="20260422014017">Common Facts</h1>
+<ul start="0" id="20260422012032-wq8wgh2" updated="20260422014017">
+<li id="20260422012032-zrn7jwa" updated="20260422012032">
+<p id="20260422012032-b9rc2ge" updated="20260422012143">​<span data-type="code">LD</span> (symbol: veritcal cross) signals are basically used when u want to write something to any registers eg- MAR, MDR, DR, CC, PC, IR, etc</p>
+</li>
+<li id="20260422012106-ct5ebhn" updated="20260422012106">
+<p id="20260422012106-5nap2ch" updated="20260422012158">​<span data-type="code">Gate</span> (symbol: triangle) signals are used when u want to let any data flow into the bus</p>
+<ul start="0" id="20260422012203-5br8nx9" updated="20260422012203">
+<li id="20260422012203-sjf8ft9" updated="20260422012203">
+<p id="20260422012203-dal793l" updated="20260422012250">make sure in each state atmost 1 gate is open (if u have 2 or more gate open at once in one state then its bad <span data-type="strong">why??? (ponder on it)</span></p>
+</li>
+</ul>
+</li>
+<li updated="20260422012253" id="20260422012253-l3q0bax">
+<p updated="20260422012400" id="20260422012253-j9lhat0">​<span data-type="code">MEM</span> only communicates with the circuit using MAR, MDR registers and signal RW (think about the behaviour of it when RW = 1 and RW = 0)</p>
+</li>
+<li id="20260422012401-79sw1as" updated="20260422012401">
+<p id="20260422012401-i9rkpa8" updated="20260422012451">​<span data-type="code">M.xxxxx</span>: represents muxes, usually used when u see a trapezium on the cirucit</p>
+</li>
+<li id="20260422012453-owtfd6u" updated="20260422012453">
+<p id="20260422012453-fbcw8kq" updated="20260422012645">​<span data-type="code">ALU</span>: its arithmetic logic unit, it does a lot of things other than just adding, and its behaviour is controlled by aluK signal (it takes in 2 inputs A and B which can be registers or immediate values.</p>
+<ul start="0" id="20260422012525-kfc72ao" updated="20260422012525">
+<li id="20260422012524-asxlday" updated="20260422012524">
+<p id="20260422012524-s6ggxgd" updated="20260422013023">​<span contenteditable="false" data-type="img" class="img"><span> </span><span><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 1.25.55AM-20260422012558-6bjb301.png" data-src="assets/Screenshot 2026-04-22 at 1.25.55AM-20260422012558-6bjb301.png" alt="Screenshot 2026-04-22 at 1.25.55 AM" style="height: 14vh" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​<span contenteditable="false" data-type="img" class="img"><span> </span><span style="width: calc(17% - 8px);"><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 1.26.54AM-20260422012657-epp7ig7.png" data-src="assets/Screenshot 2026-04-22 at 1.26.54AM-20260422012657-epp7ig7.png" alt="Screenshot 2026-04-22 at 1.26.54 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+<li id="20260422012659-e5jd2os" updated="20260422012659">
+<p updated="20260422012809" id="20260422012659-nnhlpsn">​<span data-type="code">PassB</span>: represents simply means do not do any math, just output the input B as it is</p>
+</li>
+<li id="20260422012737-kmci88m" updated="20260422012737">
+<p updated="20260422012803" id="20260422012737-i29auq8">​<span data-type="code">notA</span>: simplre represents, do not do any math simply take a negation of input A</p>
+</li>
+<li id="20260422012816-zci2q97" updated="20260422012816">
+<p id="20260422012816-xf5y9ic" updated="20260422012837"><span data-type="strong">Note: ALU is different than PC ADDER</span></p>
+</li>
+</ul>
+</li>
+<li id="20260422012834-djrv9s1" updated="20260422012834">
+<p id="20260422012834-k0xq976" updated="20260422013039"><span data-type="strong">Adder:</span></p>
+<ul start="0" id="20260422012958-f4whut0" updated="20260422012958">
+<li id="20260422012957-ppp0y7k" updated="20260422012957">
+<p id="20260422012957-jh75v7e" updated="20260422013057">This is simply a adder which adds 2 inputs (specifically offset values and base values)</p>
+</li>
+<li updated="20260422013058" id="20260422013058-5wz2s6r">
+<p id="20260422013058-hjg0v48" updated="20260422013146">Usually u will use them when u deal with address manipulation (like PC+offset, JMP, JSR, etc)</p>
+</li>
+<li updated="20260422013146" id="20260422013146-156pfgk">
+<p id="20260422013146-7kk2ggm" updated="20260422013235">its entire reserved for doing address related computation so use this rather than using ALUk</p>
+</li>
+<li id="20260422013002-j9zi2lb" updated="20260422013002">
+<p id="20260422013002-tpvwcmo" updated="20260422013242">​<span contenteditable="false" data-type="img" class="img"><span> </span><span style="width: calc(23% - 8px);"><span class="protyle-action protyle-icons"><span class="protyle-icon protyle-icon--only"><svg class="svg"><use xlink:href="#iconMore"></use></svg></span></span><img src="assets/Screenshot 2026-04-22 at 1.29.54AM-20260422012959-61ogrzi.png" data-src="assets/Screenshot 2026-04-22 at 1.29.54AM-20260422012959-61ogrzi.png" alt="Screenshot 2026-04-22 at 1.29.54 AM" /><span class="protyle-action__drag"></span><span class="protyle-action__title"><span></span></span></span><span> </span></span>​</p>
+</li>
+</ul>
+</li>
+<li id="20260422013243-97oo4wp" updated="20260422014017">
+<p id="20260422013243-8n1t9tb" updated="20260422013324"><span data-type="strong">Some common abbrevations:</span></p>
+<ul start="0" id="20260422013325-1i02xi8" updated="20260422014017">
+<li id="20260422013324-fkbd9f5" updated="20260422013324">
+<p id="20260422013324-2pnlkgx" updated="20260422013332">​<span data-type="code">SR</span>: source register</p>
+</li>
+<li id="20260422013333-59yt10g" updated="20260422013333">
+<p id="20260422013333-gzqs72d" updated="20260422013343">​<span data-type="code">baseR</span>: base register</p>
+</li>
+<li id="20260422013343-lj4pzof" updated="20260422013343">
+<p id="20260422013343-mqj69f6" updated="20260422013350">​<span data-type="code">DR</span>: destination register</p>
+</li>
+<li updated="20260422013350" id="20260422013350-6nse3he">
+<p id="20260422013350-g27llfm" updated="20260422013407">​<span data-type="code">imm5</span>: 5 bits immediate value</p>
+</li>
+<li updated="20260422013407" id="20260422013407-nrjsk77">
+<p id="20260422013407-37rxuyy" updated="20260422013428">​<span data-type="code">zero</span>: literally means a bunch of 0s</p>
+</li>
+<li id="20260422013429-tjtdcfd" updated="20260422013429">
+<p id="20260422013429-l1br7oj" updated="20260422013447">​<span data-type="code">off9</span>: 9 bit offset values</p>
+</li>
+<li updated="20260422013450" id="20260422013450-pefst9l">
+<p id="20260422013450-xzm5jlt" updated="20260422013513">​<span data-type="code">eff addr</span> or <span data-type="code">ea</span>: effective address</p>
+</li>
+<li id="20260422013505-0wyv396" updated="20260422013505">
+<p id="20260422013505-2af4rd1" updated="20260422013540">​<span data-type="code">se(X)</span>: sign extended value of X</p>
+</li>
+<li updated="20260422013535" id="20260422013535-ilgtisp">
+<p id="20260422013535-6s3i2ed" updated="20260422013602">​<span data-type="code">calc CC</span>: calculate CC value with magic</p>
+</li>
+<li id="20260422013602-b9fwd7l" updated="20260422013602">
+<p id="20260422013602-7bex9la" updated="20260422013637">​<span data-type="code">r.out</span>: read out, ouput of the read value from memory</p>
+</li>
+<li id="20260422013627-08o2th0" updated="20260422013627">
+<p id="20260422013627-kgir7pq" updated="20260422013654">​<span data-type="code">w.in</span>: write in, input for the value that we need to write to memory</p>
+</li>
+<li id="20260422013654-1ykvf97" updated="20260422013654">
+<p id="20260422013654-3c5c98e" updated="20260422013706">​<span data-type="code">mem</span>: memory</p>
+</li>
+<li id="20260422013706-z754o8c" updated="20260422013706">
+<p id="20260422013706-so4tq1x" updated="20260422013712">​<span data-type="code">bus</span>: bus line's data</p>
+</li>
+<li id="20260422013718-91dfbad" updated="20260422013718">
+<p id="20260422013718-a2to9n2" updated="20260422013727">​<span data-type="code">RW</span>: read or write</p>
+</li>
+<li updated="20260422013738" id="20260422013738-d660bnv">
+<p updated="20260422013752" id="20260422013738-k84zqt1">​<span data-type="code">aluK</span>: Arithmetic logic unit kontrol</p>
+</li>
+<li id="20260422013808-ya81ugn" updated="20260422013808">
+<p id="20260422013808-moakj6t" updated="20260422013837">​<span data-type="code">REG FILE</span>: register file where all the registers live (<span data-type="em">Note registers lives here not in MEM)</span></p>
+</li>
+<li id="20260422013844-qb33yif" updated="20260422013844">
+<p id="20260422013844-69lfwpf" updated="20260422013852">​<span data-type="code">MAR</span>: Memory address register</p>
+</li>
+<li id="20260422013854-z9bmm6n" updated="20260422013854">
+<p updated="20260422013900" id="20260422013854-ingy7pm">​<span data-type="code">MDR</span>: Memory data register</p>
+</li>
+<li updated="20260422013924" id="20260422013924-esfxpm7">
+<p id="20260422013924-nvf4q3d" updated="20260422013954">​<span data-type="code">IR</span>: instruction registe (where ur single instruction lives in binary format)</p>
+</li>
+<li id="20260422013955-z6e3jdz" updated="20260422014017">
+<p id="20260422013955-bg9t24t" updated="20260422014017">​<span data-type="code">PC</span>: Program Counter (stores address of an instruction)</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<script src="appearance/icons/material/icon.js?v=3.6.5"></script>
+<script src="stage/build/export/protyle-method.js?v=3.6.5"></script>
+<script src="stage/protyle/js/lute/lute.min.js?v=3.6.5"></script>  
+<script>
+    
+    window.siyuan = {
+      config: {
+        appearance: { mode: 0, codeBlockThemeDark: "base16/dracula", codeBlockThemeLight: "github" },
+        editor: { 
+          codeLineWrap: true,
+          fontSize: 16,
+          codeLigatures: false,
+          plantUMLServePath: "https://www.plantuml.com/plantuml/svg/~1",
+          codeSyntaxHighlightLineNum: false,
+          katexMacros: decodeURI(`%7B%7D`),
+        }
+      },
+      languages: {copy:"Copy"}
+    };
+    const previewElement = document.getElementById('preview');
+    Protyle.highlightRender(previewElement, "stage/protyle");
+    Protyle.mathRender(previewElement, "stage/protyle", false);
+    Protyle.mermaidRender(previewElement, "stage/protyle");
+    Protyle.flowchartRender(previewElement, "stage/protyle");
+    Protyle.graphvizRender(previewElement, "stage/protyle");
+    Protyle.chartRender(previewElement, "stage/protyle");
+    Protyle.mindmapRender(previewElement, "stage/protyle");
+    Protyle.abcRender(previewElement, "stage/protyle");
+    Protyle.htmlRender(previewElement);
+    Protyle.plantumlRender(previewElement, "stage/protyle");
+    document.querySelectorAll(".protyle-action__copy").forEach((item) => {
+      item.addEventListener("click", (event) => {
+            navigator.clipboard.writeText(item.parentElement.nextElementSibling.textContent.trimEnd().replace(/ /g, " ").replace(/‍```/g, "```"));
+            event.preventDefault();
+            event.stopPropagation();
+      })
+    });
+</script>
+</body></html>
