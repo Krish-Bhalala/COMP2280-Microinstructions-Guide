@@ -9,4 +9,4 @@
 
 ### [Live Hosted Doc Link](https://krish-bhalala.github.io/COMP2280-Microinstructions-Guide/)
 
-### [Pdf version Link](https://github.com/Krish-Bhalala/COMP2280-Microinstructions-Guide/blob/6f2849810f4da3cad67083f488e073f321ad28ad/Microinstructions%20with%20Diagram.pdf)
+### [Pdf version Link](https://github.com/Krish-Bhalala/COMP2280-Microinstructions-Guide/blob/cf3dd510e9fa6eb9bb46a4544865a8bc21156be3/MicroinstructionsGuide.pdf)
